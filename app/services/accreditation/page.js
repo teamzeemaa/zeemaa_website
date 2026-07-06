@@ -11,8 +11,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/services/accreditation' },
 };
 
-export default function AccreditationPage() {
-  const store = readStore();
+export default async function AccreditationPage() {
+  const store = await readStore();
 
   const features = [
     { icon:'fa-layer-group', t:'Multi-Tier Accreditation', d:'VIP, speaker, exhibitor, staff, and media categories, each with its own access rules and privileges.' },

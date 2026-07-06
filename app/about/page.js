@@ -13,8 +13,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/about' },
 };
 
-export default function AboutPage() {
-  const store = readStore();
+export default async function AboutPage() {
+  const store = await readStore();
   const locations = (store.locations || []).filter(l => l.enabled);
 
   return (

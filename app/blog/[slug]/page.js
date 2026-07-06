@@ -13,7 +13,7 @@ const SITE_URL = 'https://zeemaa.com';
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const store = readStore();
+  const store = await readStore();
   const post = getPostBySlug(store, slug);
   if (!post) return { title: 'Not Found' };
   const url = `${SITE_URL}/blog/${post.slug}`;
@@ -45,7 +45,7 @@ function fmtDate(d) {
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
-  const store = readStore();
+  const store = await readStore();
   const post = getPostBySlug(store, slug);
   if (!post) notFound();
 

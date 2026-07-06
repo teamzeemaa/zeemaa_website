@@ -24,8 +24,8 @@ export async function POST(request) {
       utm_campaign: utm_campaign || null,
     };
 
-    addSubmission(submission);
-    addLog({ type: 'form', event: 'demo_requested', detail: `${fullName} (${company || email})` });
+    await addSubmission(submission);
+    await addLog({ type: 'form', event: 'demo_requested', detail: `${fullName} (${company || email})` });
 
     try {
       const nodemailer = require('nodemailer');

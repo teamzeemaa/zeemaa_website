@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/demo' },
 };
 
-export default function DemoPage() {
-  const store = readStore();
+export default async function DemoPage() {
+  const store = await readStore();
   return <DemoClient store={store} />;
 }

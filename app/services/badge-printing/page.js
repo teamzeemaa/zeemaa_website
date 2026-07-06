@@ -11,8 +11,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/services/badge-printing' },
 };
 
-export default function BadgePrintingPage() {
-  const store = readStore();
+export default async function BadgePrintingPage() {
+  const store = await readStore();
 
   const features = [
     { icon:'fa-print', t:'On-Demand Badge Printing', d:'Attendees get their badge the moment they check in, printed on-site with no pre-printing or manual sorting required.' },

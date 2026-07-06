@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/industries' },
 };
 
-export default function IndustriesPage() {
-  const store = readStore();
+export default async function IndustriesPage() {
+  const store = await readStore();
   return <IndustriesClient store={store} />;
 }

@@ -11,8 +11,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/services/registration' },
 };
 
-export default function RegistrationPage() {
-  const store = readStore();
+export default async function RegistrationPage() {
+  const store = await readStore();
 
   const features = [
     { icon:'fa-palette', t:'Branded Registration Pages', d:'Custom sign-up pages built around your event identity, with your logo, colors, and domain. Attendees see your brand from the first click.' },

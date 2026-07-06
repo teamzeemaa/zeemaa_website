@@ -8,8 +8,8 @@ export const metadata = {
   description: 'Photos from conferences, exhibitions, and corporate events managed by Zeemaa across Saudi Arabia.',
 };
 
-export default function GalleryPage() {
-  const store = readStore();
+export default async function GalleryPage() {
+  const store = await readStore();
   const images = store.gallery?.filter(g => g.enabled) || [];
 
   return (

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { readStore } from '../../../lib/store';
 
 export async function GET() {
-  const store = readStore();
+  const store = await readStore();
   const publicStore = {
     site: store.site || {},
     sections: store.sections || {},

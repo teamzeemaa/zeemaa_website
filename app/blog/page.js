@@ -18,8 +18,8 @@ export async function generateMetadata() {
   };
 }
 
-export default function BlogPage() {
-  const store = readStore();
+export default async function BlogPage() {
+  const store = await readStore();
   const posts = getPublishedPosts(store);
   const featured = getFeaturedPost(store);
   const rest = posts.filter(p => p.slug !== featured?.slug);

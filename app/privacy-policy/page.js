@@ -71,8 +71,8 @@ const sections = [
   },
 ];
 
-export default function PrivacyPolicyPage() {
-  const store = readStore();
+export default async function PrivacyPolicyPage() {
+  const store = await readStore();
 
   return (
     <>

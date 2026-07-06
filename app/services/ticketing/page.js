@@ -11,8 +11,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/services/ticketing' },
 };
 
-export default function TicketingPage() {
-  const store = readStore();
+export default async function TicketingPage() {
+  const store = await readStore();
 
   const features = [
     { icon:'fa-layer-group', t:'Tiered Pricing', d:'VIP, standard, student, and any category your event needs, each with its own price, allocation, and access level.' },

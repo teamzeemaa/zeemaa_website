@@ -11,8 +11,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/services/invitations' },
 };
 
-export default function InvitationsPage() {
-  const store = readStore();
+export default async function InvitationsPage() {
+  const store = await readStore();
 
   const features = [
     { icon:'fa-envelope-open-text', t:'Digital Invitations', d:'Branded invitations in Arabic and English, sent by email, WhatsApp, or both, for any event from a private dinner to a public conference.' },

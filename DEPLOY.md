@@ -131,14 +131,23 @@ Everything updates live. No code changes needed.
 
 ---
 
-## PART 8 — Data persistence note (important)
-The admin console saves data to data/store.json.
-On Vercel's serverless infrastructure, file writes do not persist between deploys.
+## PART 8 — Data persistence (done — Redis connected)
+The admin console saves data to data/store.json. On Vercel's serverless
+infrastructure, file writes do not persist between deploys, so lib/store.js
+now supports Redis as a persistent backend and falls back to the local file
+automatically when no Redis is connected (this is what keeps local dev working
+exactly as before, with zero setup).
 
-Simplest fix: enable Vercel KV (free tier).
-  Vercel dashboard → Storage → Create → KV Database → connect to your project
-  Then message Fahad's AI assistant to update lib/store.js to use Vercel KV.
-  This is a 20-line change and takes 10 minutes.
+To turn this on in production:
+  1. Vercel dashboard → your project → Storage → Marketplace Database Providers
+  2. Add "Upstash" → choose Redis → connect it to your project
+     (Vercel KV is deprecated; Upstash Redis is the current replacement)
+  3. Vercel auto-injects the connection env vars (KV_REST_API_URL /
+     KV_REST_API_TOKEN or UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN —
+     lib/store.js checks for either naming). Nothing else to configure.
+  4. Redeploy. The first request seeds Redis from the bundled data/store.json,
+     and every admin console change after that persists across deploys.
 
-Until then: any changes made in the admin console survive until the next deploy.
-For the launch period this is fine — set everything before deploying.
+Until Redis is connected, admin console changes still only survive until the
+next deploy — fine for the launch period, but connect Redis before you expect
+editors to rely on it.

@@ -3,8 +3,8 @@ import { getPublishedPosts } from '../lib/blog';
 
 const SITE_URL = 'https://zeemaa.com';
 
-export default function sitemap() {
-  const store = readStore();
+export default async function sitemap() {
+  const store = await readStore();
 
   const blogPosts = store.pages?.blog
     ? getPublishedPosts(store).map(post => ({

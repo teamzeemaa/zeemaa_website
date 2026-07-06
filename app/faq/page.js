@@ -7,8 +7,8 @@ export const metadata = {
   alternates: { canonical: 'https://zeemaa.com/faq' },
 };
 
-export default function FaqPage() {
-  const store = readStore();
+export default async function FaqPage() {
+  const store = await readStore();
   const faqs = (store.faq || []).filter(f => f.enabled);
   return <FaqClient store={store} faqs={faqs} />;
 }

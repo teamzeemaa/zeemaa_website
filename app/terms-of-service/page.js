@@ -72,8 +72,8 @@ const sections = [
   },
 ];
 
-export default function TermsOfServicePage() {
-  const store = readStore();
+export default async function TermsOfServicePage() {
+  const store = await readStore();
 
   return (
     <>
