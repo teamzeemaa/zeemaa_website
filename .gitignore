@@ -20,3 +20,6 @@ npm-debug.log*
 
 # stray artifact from a broken mkdir brace-expansion (harmless, not real content)
 /{app
+
+.vercel
+.env*
