@@ -1,0 +1,499 @@
+{
+  "site": {
+    "email": "hello@zeemaa.com",
+    "phone": "+966552995295",
+    "whatsapp": "966552995295",
+    "instagramUrl": "https://www.instagram.com/zeemaa.ksa",
+    "linkedinUrl": "https://www.linkedin.com/company/zeemaa",
+    "facebookUrl": "",
+    "youtubeUrl": "",
+    "xUrl": "",
+    "demoLink": "",
+    "demoMode": "form",
+    "announcementEnabled": false,
+    "announcementText": "Now accepting bookings for 2026 to 2027 events across KSA.",
+    "businessHoursEnabled": true,
+    "businessHoursStart": 9,
+    "businessHoursEnd": 18
+  },
+  "users": [
+    {
+      "id": "u1",
+      "username": "admin",
+      "passwordHash": "baf9^uwVy^JKr*hb",
+      "role": "master",
+      "name": "Master Admin",
+      "enabled": true,
+      "modules": {
+        "content": [
+          "view",
+          "edit",
+          "reorder"
+        ],
+        "gallery": [
+          "view",
+          "add",
+          "edit",
+          "delete",
+          "reorder"
+        ],
+        "testimonials": [
+          "view",
+          "add",
+          "edit",
+          "delete",
+          "reorder"
+        ],
+        "faq": [
+          "view",
+          "add",
+          "edit",
+          "delete",
+          "reorder"
+        ],
+        "social": [
+          "view",
+          "edit"
+        ],
+        "submissions": [
+          "view"
+        ],
+        "logs": [
+          "view"
+        ],
+        "analytics": [
+          "view"
+        ],
+        "settings": [
+          "view",
+          "edit"
+        ],
+        "visibility": [
+          "toggle"
+        ],
+        "users": [
+          "view",
+          "add",
+          "edit",
+          "delete"
+        ],
+        "blog": [
+          "view",
+          "add",
+          "edit",
+          "delete"
+        ],
+        "demo": [
+          "view",
+          "edit"
+        ]
+      }
+    },
+    {
+      "id": "u2",
+      "username": "sm",
+      "passwordHash": "2&sEj@LUZ4Sh4XY#",
+      "role": "user",
+      "name": "Social Media Manager",
+      "enabled": true,
+      "modules": {
+        "content": [
+          "view",
+          "edit",
+          "reorder"
+        ],
+        "gallery": [
+          "view",
+          "add",
+          "edit",
+          "delete",
+          "reorder"
+        ],
+        "testimonials": [
+          "view",
+          "add",
+          "edit",
+          "reorder"
+        ],
+        "faq": [
+          "view"
+        ],
+        "social": [
+          "view",
+          "edit"
+        ],
+        "submissions": [],
+        "logs": [],
+        "analytics": [],
+        "settings": [],
+        "visibility": [],
+        "users": [],
+        "blog": [
+          "view",
+          "add",
+          "edit"
+        ],
+        "demo": []
+      }
+    }
+  ],
+  "sections": {
+    "announcement": true,
+    "stats": true,
+    "testimonials": false,
+    "gallery": false,
+    "caseStudies": false,
+    "partners": true,
+    "locations": true,
+    "faq": true,
+    "resources": true,
+    "compare": false,
+    "clientLogos": false
+  },
+  "pages": {
+    "gallery": false,
+    "caseStudies": false,
+    "blog": true,
+    "compare": false
+  },
+  "stats": [
+    {
+      "id": "s1",
+      "number": "5+",
+      "label": "Years Combined Experience",
+      "enabled": true
+    },
+    {
+      "id": "s2",
+      "number": "KSA",
+      "label": "Headquartered and Operating",
+      "enabled": true
+    },
+    {
+      "id": "s3",
+      "number": "QR",
+      "label": "First, Fast and Reliable",
+      "enabled": true
+    }
+  ],
+  "testimonials": [],
+  "gallery": [],
+  "caseStudies": [],
+  "clientLogos": [],
+  "blog": [
+    {
+      "id": "b1",
+      "slug": "qr-check-in-that-scales",
+      "title": "What Makes QR Check-in Work at Scale for Saudi Conferences",
+      "titleAr": "",
+      "pillarTag": "Registration",
+      "excerpt": "Why QR-based check-in holds up at thousands of attendees, and what actually breaks it on event day.",
+      "featuredImage": "https://images.unsplash.com/photo-1661169398346-aecdc4f5068b?w=1200&q=80&auto=format&fit=crop",
+      "authorRoleTag": "Product Team",
+      "datePublished": "2026-06-18",
+      "lastModified": "2026-06-18T09:00:00.000Z",
+      "readTimeMinutes": 6,
+      "relatedServiceSlug": "registration",
+      "relatedPostSlugs": [],
+      "metaTitle": "QR Check-in at Scale for Saudi Conferences | Zeemaa",
+      "metaDescription": "How QR-based check-in handles large Saudi conferences without long queues, and the setup details that make it reliable on event day.",
+      "body": "<p>Event organizers ask the same question before every large conference: will check-in hold up when a large crowd arrives in the same thirty-minute window. QR-based check-in answers that question well, but only when a few specific things are set up correctly ahead of time.</p><h2>Why QR outperforms manual lists at scale</h2><p>A QR code on a badge or a phone screen scans in well under a second on a basic tablet camera. There is no typing a name, no scrolling a spreadsheet, and no judgment call about whether one spelling matches another on the list. The code either matches a record or it does not.</p><p>That simplicity is what lets a single check-in lane process attendees continuously instead of in bursts. Add more lanes and the throughput scales close to linearly, which is not true of manual verification.</p><h2>What actually slows QR check-in down</h2><p>The failures we see on event day are rarely about the QR code itself. They are almost always about the surrounding setup: a scanner running on unreliable venue Wi-Fi with no offline fallback, a badge printed with the code too small or too glossy to scan under venue lighting, or a single check-in desk trying to serve an entire arrival wave.</p><p>Each of these is solvable with planning rather than new technology. Offline-capable scanning apps, a printed badge spec that accounts for lighting, and enough desks sized to expected arrival patterns fix nearly every check-in bottleneck we have encountered.</p><h2>Where this fits with accreditation and access control</h2><p>Check-in is the first scan of many. The same QR code that gets someone through the front door typically continues to work at session gates, VIP areas, and exhibitor zones once a proper accreditation layer sits behind it. That is the difference between a check-in tool and an access control platform.</p><p>For organizers running events in Riyadh, we manage this full layer end to end, from the registration form to the exit gate, with a team on the ground for the event itself.</p>",
+      "bodyAr": "",
+      "pinned": true,
+      "published": true,
+      "createdAt": "2026-06-18T09:00:00.000Z"
+    },
+    {
+      "id": "b2",
+      "slug": "badge-printing-on-demand",
+      "title": "On-Demand Badge Printing: What Changes When You Stop Pre-Printing",
+      "titleAr": "",
+      "pillarTag": "Badge Printing",
+      "excerpt": "Pre-printed badge stacks feel efficient until a late registration or a same-day upgrade shows up. Here is what on-demand printing changes.",
+      "featuredImage": "https://images.unsplash.com/photo-1619590530358-d4f0c3f8bbec?w=1200&q=80&auto=format&fit=crop",
+      "authorRoleTag": "Operations Team",
+      "datePublished": "2026-06-25",
+      "lastModified": "2026-06-25T09:00:00.000Z",
+      "readTimeMinutes": 5,
+      "relatedServiceSlug": "accreditation",
+      "relatedPostSlugs": [
+        "qr-check-in-that-scales"
+      ],
+      "metaTitle": "On-Demand Badge Printing for Events | Zeemaa",
+      "metaDescription": "What changes operationally when badges print on demand at check-in instead of being pre-printed before an event.",
+      "body": "<p>Pre-printing badges feels efficient right up until the moment someone registers late, spells their name differently at the desk, or a VIP swaps their plus-one. Then the printed stack becomes a liability instead of a shortcut.</p><h2>What on-demand printing actually removes</h2><p>On-demand badge printing removes the entire pre-event sorting stage. There is no alphabetized stack to guard, no last-minute reprint scramble, and no risk of handing someone a badge meant for another attendee because two names look similar on paper.</p><p>Instead, the badge prints the moment someone checks in, pulling their category, access zones, and QR code straight from their registration record. Whatever changed since they signed up, including a same-day category upgrade, is already reflected.</p><h2>Where the printer has to keep up</h2><p>The tradeoff is that the printer becomes part of the live event infrastructure rather than a one-time job finished before doors open. That means real printers at real check-in desks, tested under the actual venue network, not a laptop plugged in an hour before the event.</p><p>We size the number of stations to expected arrival volume the same way we size check-in lanes, because a single overloaded printer creates exactly the queue that on-demand printing is supposed to avoid.</p><h2>Badges as the credential, not just the label</h2><p>The badge is also where accreditation becomes physical. Whatever access tier someone has, whether general, speaker, or VIP, gets encoded into the badge at the moment it prints, so the same document that identifies someone also controls where they can go.</p><p>That link between printing and access control is why we treat the two as one system rather than two separate vendors to coordinate between.</p>",
+      "bodyAr": "",
+      "pinned": false,
+      "published": true,
+      "createdAt": "2026-06-25T09:00:00.000Z"
+    },
+    {
+      "id": "b3",
+      "slug": "accreditation-qr-and-rfid",
+      "title": "Accreditation That Works: QR by Default, RFID Where It Helps",
+      "titleAr": "",
+      "pillarTag": "Registration",
+      "excerpt": "Accreditation is an access control problem wearing a badge. Here is how QR and RFID each fit into that, without treating one as a replacement for the other.",
+      "featuredImage": "https://images.unsplash.com/photo-1565448042513-22000c56a834?w=1200&q=80&auto=format&fit=crop",
+      "authorRoleTag": "Access Control Team",
+      "datePublished": "2026-07-01",
+      "lastModified": "2026-07-01T09:00:00.000Z",
+      "readTimeMinutes": 6,
+      "relatedServiceSlug": "accreditation",
+      "relatedPostSlugs": [],
+      "metaTitle": "QR and RFID Accreditation for Events | Zeemaa",
+      "metaDescription": "How QR-first accreditation works by default, and where RFID adds real value alongside it for high-volume gates and cashless payments.",
+      "body": "<p>Accreditation is really an access control problem wearing a badge. The question is never just who this is, it is where this person is allowed to go, right now, at this gate. QR handles that well, and for events that want a second credential format alongside it, RFID is a solid complementary option.</p><h2>QR as the default</h2><p>We build every accreditation setup QR-first. It prints on any badge, needs no special card stock, and scans on a phone, tablet, or dedicated scanner without extra hardware. For the large majority of conferences and exhibitions we support, QR alone covers every access tier an event needs.</p><p>Multi-tier accreditation, whether that is VIP, speaker, exhibitor, staff, or media, is a data problem at that point rather than a hardware problem. Each tier maps to a set of zones, and the badge just carries the code that unlocks them.</p><h2>Where RFID adds something QR does not</h2><p>RFID is not a replacement for that setup, it is an addition worth considering for two specific situations: gates with very high, continuous throughput where a tap is faster than a scan, and cashless on-site spending where attendees top up a wristband instead of carrying a card.</p><p>For events that want both, we run RFID alongside the QR-first platform rather than instead of it, so the accreditation data underneath stays the same regardless of which credential format an attendee is holding.</p><h2>Real-time verification is what makes either format work</h2><p>Whichever credential an event chooses, the part that actually prevents an unauthorized entry is real-time verification against the guest list, not the format of the credential itself. A tap or a scan that checks against a stale list will let the wrong person through just as easily as no check at all.</p>",
+      "bodyAr": "",
+      "pinned": false,
+      "published": true,
+      "createdAt": "2026-07-01T09:00:00.000Z"
+    },
+    {
+      "id": "b4",
+      "slug": "ticketing-tiers-that-dont-annoy-buyers",
+      "title": "Ticketing Tiers That Do Not Annoy Your Buyers",
+      "titleAr": "",
+      "pillarTag": "Ticketing",
+      "excerpt": "Tiered pricing is easy to describe and easy to get wrong. Here is what breaks when tiers, cutoffs, and payment are handled manually.",
+      "featuredImage": "https://images.unsplash.com/photo-1650454664813-904aa41701bb?w=1200&q=80&auto=format&fit=crop",
+      "authorRoleTag": "Ticketing Team",
+      "datePublished": "2026-07-03",
+      "lastModified": "2026-07-03T09:00:00.000Z",
+      "readTimeMinutes": 5,
+      "relatedServiceSlug": "ticketing",
+      "relatedPostSlugs": [
+        "accreditation-qr-and-rfid",
+        "badge-printing-on-demand"
+      ],
+      "metaTitle": "Event Ticketing Tiers Done Right | Zeemaa",
+      "metaDescription": "What breaks when tiered event ticketing, cutoffs, and payment are handled manually, and how to set tiers up so they hold on sale day.",
+      "body": "<p>Tiered pricing is simple to describe and easy to get wrong in practice. VIP, standard, and early-bird sound like three numbers in a spreadsheet, but each tier needs its own inventory cap, its own cutoff logic, and its own path through payment, or the categories blur together the moment sales open.</p><h2>What breaks first when tiers are handled manually</h2><p>The most common failure is a tier that should have closed but did not, because someone forgot to flip a switch at the cutoff time. The second most common is an early-bird price that a buyer can still access after the window closes, simply by reloading an old link.</p><p>Both are fixable by making cutoffs a property of the ticket tier itself, enforced automatically, rather than a manual step someone has to remember to perform.</p><h2>Payment has to match how people actually pay</h2><p>In Saudi Arabia that means MADA has to work as smoothly as a card payment, not as an afterthought bolted on later. Apple Pay matters for the same reason. We route ticketing payments through certified gateways including Moyasar so buyers can pay the way they already pay for everything else.</p><p>Refunds and name transfers deserve the same level of care as the original purchase. A buyer who cannot transfer a ticket to a colleague when their plans change will remember that friction long after the event is over.</p><h2>Ticketing is the first data point in the event, not a separate system</h2><p>The ticket someone buys should be the same record that becomes their registration, their badge, and their access tier at the gate. Treating ticketing as a bolted-on payment step, separate from registration, is where most of the reconciliation headaches we see actually come from.</p>",
+      "bodyAr": "",
+      "pinned": false,
+      "published": true,
+      "createdAt": "2026-07-03T09:00:00.000Z"
+    }
+  ],
+  "submissions": [
+    {
+      "id": "1783236559538",
+      "ts": "2026-07-05T07:29:19.538Z",
+      "type": "contact",
+      "fullName": "ghjgh",
+      "email": "fahadekm@gmail.com",
+      "phone": "+966 85258468",
+      "message": "gd;lhdghfgdhg",
+      "gclid": null,
+      "utm_source": null,
+      "utm_medium": null,
+      "utm_campaign": null
+    }
+  ],
+  "logs": [
+    {
+      "id": "1783265106654",
+      "ts": "2026-07-05T15:25:06.654Z",
+      "type": "auth",
+      "event": "login",
+      "username": "admin",
+      "ip": "::1"
+    },
+    {
+      "id": "1783255577953",
+      "ts": "2026-07-05T12:46:17.953Z",
+      "type": "blog",
+      "event": "post_deleted",
+      "detail": "1783255536026",
+      "username": "admin"
+    },
+    {
+      "id": "1783255577710",
+      "ts": "2026-07-05T12:46:17.710Z",
+      "type": "auth",
+      "event": "login",
+      "username": "admin",
+      "ip": "::1"
+    },
+    {
+      "id": "1783255536035",
+      "ts": "2026-07-05T12:45:36.035Z",
+      "type": "blog",
+      "event": "post_created",
+      "detail": "Admin Form Test Post",
+      "username": "admin"
+    },
+    {
+      "id": "1783255531984",
+      "ts": "2026-07-05T12:45:31.984Z",
+      "type": "auth",
+      "event": "login",
+      "username": "admin",
+      "ip": "::1"
+    },
+    {
+      "id": "1783254691593",
+      "ts": "2026-07-05T12:31:31.593Z",
+      "type": "content",
+      "event": "page_enabled",
+      "detail": "blog",
+      "username": "admin"
+    },
+    {
+      "id": "1783254630789",
+      "ts": "2026-07-05T12:30:30.789Z",
+      "type": "content",
+      "event": "section_enabled",
+      "detail": "announcement",
+      "username": "admin"
+    },
+    {
+      "id": "1783254620792",
+      "ts": "2026-07-05T12:30:20.803Z",
+      "type": "auth",
+      "event": "login",
+      "username": "admin",
+      "ip": "::1"
+    },
+    {
+      "id": "1783236559541",
+      "ts": "2026-07-05T07:29:19.541Z",
+      "type": "form",
+      "event": "contact_submitted",
+      "detail": "ghjgh (fahadekm@gmail.com)"
+    }
+  ],
+  "faq": [
+    {
+      "id": "f1",
+      "q": "What types of events does Zeemaa support?",
+      "a": "Zeemaa supports conferences, summits, exhibitions, trade shows, corporate events, award ceremonies, government events, workshops, and seminars across Saudi Arabia. Our platform and on-site team scale from 100-person workshops to large multi-day exhibitions.",
+      "enabled": true
+    },
+    {
+      "id": "f2",
+      "q": "How quickly can you set up a registration platform?",
+      "a": "We can deploy a fully branded registration platform within 5 to 7 business days. Rush setups are available for urgent requirements. Our team handles design, configuration, and testing before launch.",
+      "enabled": true
+    },
+    {
+      "id": "f3",
+      "q": "Do you provide on-site support during events?",
+      "a": "Yes. Our team is on-ground managing check-in stations, badge printing, communication systems, CCTV, and technical support throughout your event.",
+      "enabled": true
+    },
+    {
+      "id": "f4",
+      "q": "What payment methods are supported?",
+      "a": "We support MADA, Apple Pay, Visa, Mastercard, and bank transfers through certified Saudi payment gateways including Moyasar. All transactions are PCI-DSS compliant.",
+      "enabled": true
+    },
+    {
+      "id": "f5",
+      "q": "Can the platform handle Arabic and English?",
+      "a": "Full Arabic and English support including RTL layouts, bilingual registration forms, badges, and certificates.",
+      "enabled": true
+    },
+    {
+      "id": "f6",
+      "q": "Do you offer ticketing solutions?",
+      "a": "Yes. We offer custom ticketing platforms with tiered pricing, early-bird offers, group discounts, and secure payment processing integrated with your event registration.",
+      "enabled": true
+    },
+    {
+      "id": "f7",
+      "q": "Can invitations, reminders, and confirmations be sent by WhatsApp and email?",
+      "a": "Yes. Every event can have branded invitations, automated reminders, and instant confirmations sent by email, WhatsApp, or both, depending on your requirements. Once a guest is confirmed, their e-badge or e-ticket is delivered automatically on the same channel.",
+      "enabled": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "l1",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "type": "Headquarters",
+      "enabled": true
+    },
+    {
+      "id": "l2",
+      "city": "Dammam",
+      "country": "Saudi Arabia",
+      "type": "Eastern Province Operations",
+      "enabled": true
+    }
+  ],
+  "partners": [
+    {
+      "id": "p1",
+      "icon": "fas fa-credit-card",
+      "name": "MADA",
+      "enabled": true
+    },
+    {
+      "id": "p2",
+      "icon": "fas fa-money-bill-wave",
+      "name": "Moyasar",
+      "enabled": true
+    },
+    {
+      "id": "p3",
+      "icon": "fab fa-microsoft",
+      "name": "Microsoft Teams",
+      "enabled": true
+    },
+    {
+      "id": "p4",
+      "icon": "fab fa-whatsapp",
+      "name": "WhatsApp Business",
+      "enabled": true
+    },
+    {
+      "id": "p5",
+      "icon": "fas fa-video",
+      "name": "Zoom",
+      "enabled": true
+    },
+    {
+      "id": "p6",
+      "icon": "fab fa-google",
+      "name": "Google Workspace",
+      "enabled": true
+    },
+    {
+      "id": "p7",
+      "icon": "fas fa-chart-pie",
+      "name": "Power BI",
+      "enabled": true
+    },
+    {
+      "id": "p8",
+      "icon": "fas fa-bolt",
+      "name": "Zapier",
+      "enabled": true
+    }
+  ],
+  "resources": [
+    {
+      "id": "r1",
+      "title": "How to Choose the Right Registration Platform for Events in Saudi Arabia",
+      "desc": "A comprehensive guide for event organizers",
+      "status": "coming-soon",
+      "enabled": true
+    },
+    {
+      "id": "r2",
+      "title": "5 Must-Have Features in Modern Event Registration Systems",
+      "desc": "What to look for in 2025 and beyond",
+      "status": "coming-soon",
+      "enabled": true
+    },
+    {
+      "id": "r3",
+      "title": "Vision 2030 and the Rise of World-Class Events in Saudi Arabia",
+      "desc": "How KSA is becoming a global events destination",
+      "status": "coming-soon",
+      "enabled": true
+    }
+  ]
+}
