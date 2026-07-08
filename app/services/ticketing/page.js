@@ -8,7 +8,10 @@ import TicketReveal from './TicketReveal';
 export const metadata = {
   title: 'Event Ticketing Platform in Saudi Arabia | Zeemaa',
   description: 'Custom event ticketing for conferences, exhibitions, and corporate events across Saudi Arabia. Tiered pricing, promo codes, secure MADA and Apple Pay payments, QR e-tickets, and live sales tracking, fully managed by Zeemaa.',
-  alternates: { canonical: 'https://zeemaa.com/services/ticketing' },
+  alternates: {
+    canonical: 'https://zeemaa.com/services/ticketing',
+    languages: { en: 'https://zeemaa.com/services/ticketing', ar: 'https://zeemaa.com/ar/services/ticketing' },
+  },
 };
 
 export default async function TicketingPage() {

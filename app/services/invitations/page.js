@@ -8,7 +8,10 @@ import InviteReveal from './InviteReveal';
 export const metadata = {
   title: 'Event Invitations, Reminders and Confirmations | Zeemaa',
   description: 'Digital invitations, automated reminders, RSVP confirmations, and e-badge or e-ticket delivery for every event in Saudi Arabia, sent by email and WhatsApp depending on your requirements, fully managed by Zeemaa.',
-  alternates: { canonical: 'https://zeemaa.com/services/invitations' },
+  alternates: {
+    canonical: 'https://zeemaa.com/services/invitations',
+    languages: { en: 'https://zeemaa.com/services/invitations', ar: 'https://zeemaa.com/ar/services/invitations' },
+  },
 };
 
 export default async function InvitationsPage() {

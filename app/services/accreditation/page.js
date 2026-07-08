@@ -8,7 +8,10 @@ import AccessControlReveal from './AccessControlReveal';
 export const metadata = {
   title: 'Event Accreditation Services in Saudi Arabia | QR and RFID | Zeemaa',
   description: 'Event accreditation services and an access control platform for Saudi Arabia. QR-coded badges by default, with RFID wristbands and cards available for high-volume gates and cashless on-site spending, fully managed by Zeemaa.',
-  alternates: { canonical: 'https://zeemaa.com/services/accreditation' },
+  alternates: {
+    canonical: 'https://zeemaa.com/services/accreditation',
+    languages: { en: 'https://zeemaa.com/services/accreditation', ar: 'https://zeemaa.com/ar/services/accreditation' },
+  },
 };
 
 export default async function AccreditationPage() {

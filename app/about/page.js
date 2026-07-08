@@ -10,7 +10,10 @@ import Vision2030Visual from './Vision2030Visual';
 export const metadata = {
   title: 'About | Zeemaa Event Technology',
   description: 'Zeemaa is Saudi Arabia fully managed event technology partner, headquartered in Riyadh with operations across the Kingdom.',
-  alternates: { canonical: 'https://zeemaa.com/about' },
+  alternates: {
+    canonical: 'https://zeemaa.com/about',
+    languages: { en: 'https://zeemaa.com/about', ar: 'https://zeemaa.com/ar/about' },
+  },
 };
 
 export default async function AboutPage() {

@@ -1,4 +1,10 @@
-export default function Vision2030Visual() {
+const LABELS = {
+  en: { badge: 'Vision 2030', society: 'Vibrant Society', economy: 'Thriving Economy', nation: 'Ambitious Nation' },
+  ar: { badge: 'رؤية 2030', society: 'مجتمع حيوي', economy: 'اقتصاد مزدهر', nation: 'وطن طموح' },
+};
+
+export default function Vision2030Visual({ locale = 'en' }) {
+  const t = LABELS[locale] || LABELS.en;
   return (
     <div className="v30vz">
       <div className="v30vz-mark">
@@ -14,12 +20,12 @@ export default function Vision2030Visual() {
         </svg>
         <div className="v30vz-num">2030</div>
       </div>
-      <div className="v30vz-badge"><i className="fas fa-star" /> Vision 2030</div>
+      <div className="v30vz-badge"><i className="fas fa-star" /> {t.badge}</div>
       <div className="v30vz-bus" />
       <div className="v30vz-pillars">
-        <div className="v30vz-pillar"><i className="fas fa-users" /><span>Vibrant Society</span></div>
-        <div className="v30vz-pillar"><i className="fas fa-chart-line" /><span>Thriving Economy</span></div>
-        <div className="v30vz-pillar"><i className="fas fa-bullseye" /><span>Ambitious Nation</span></div>
+        <div className="v30vz-pillar"><i className="fas fa-users" /><span>{t.society}</span></div>
+        <div className="v30vz-pillar"><i className="fas fa-chart-line" /><span>{t.economy}</span></div>
+        <div className="v30vz-pillar"><i className="fas fa-bullseye" /><span>{t.nation}</span></div>
       </div>
     </div>
   );

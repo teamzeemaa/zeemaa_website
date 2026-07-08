@@ -1309,3 +1309,84 @@ footer { background: rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.0
 @media (max-width: 1024px) { .sticky-share { display: none; } }
 
 .nav-dd-trigger { height: 68px; display: flex; align-items: center; }
+
+/* ================= RTL (Arabic) overrides =================
+   Scoped under [dir="rtl"], set on a wrapper div per Arabic page
+   (see app/ar/*). Flexbox/grid layouts already auto-mirror under
+   dir="rtl" — these rules only fix the physical left/right/margin
+   values and directional icons that don't mirror automatically. */
+
+[dir="rtl"] { font-family: 'Tajawal', 'Geist', sans-serif; }
+
+/* Headings + section titles: default text-align:left must flip */
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4,
+[dir="rtl"] .st2 { text-align: right; }
+
+/* Directional "next" icons (arrows/chevrons) — mirror the glyph itself,
+   since CSS dir doesn't flip icon fonts automatically */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .relsvc-cta i,
+[dir="rtl"] .wa-hero-arr,
+[dir="rtl"] .postcta-arr { transform: scaleX(-1); }
+[dir="rtl"] .phero-crumbs i.fas.fa-chevron-right { transform: scaleX(-1); }
+
+/* Breadcrumb ghost watermark: anchored to the "end" side (right in LTR) */
+[dir="rtl"] .phero-ghost { right: auto; left: 32px; text-align: left; }
+@media (max-width: 640px) {
+  [dir="rtl"] .phero-ghost { left: 16px; }
+}
+
+/* Mission/Vision/2030 teaser cards: giant number anchored to "end" */
+[dir="rtl"] .mvc-num { right: auto; left: 18px; }
+
+/* Testimonial quote mark: anchored to "start" (left in LTR) */
+[dir="rtl"] .tcq { left: auto; right: 20px; }
+
+/* Related-service cards: category tag anchored to "end", heading padding
+   reserved for it */
+[dir="rtl"] .relsvc-tag { right: auto; left: 18px; }
+[dir="rtl"] .relsvc-card h3 { padding-right: 0; padding-left: 50px; }
+
+/* Service-subpage hero: floating chips mirrored corner to corner */
+[dir="rtl"] .isp-chip-a { left: auto; right: -10px; }
+[dir="rtl"] .isp-chip-b { right: auto; left: -6px; }
+
+/* Industries accordion: indent that aligns body text under the icon+title
+   flips since the icon moves to the visual right under RTL */
+[dir="rtl"] .acc-desc,
+[dir="rtl"] .acc-feat-label,
+[dir="rtl"] .acc-feats { padding-left: 0; padding-right: 60px; }
+[dir="rtl"] .acc-head { text-align: right; }
+@media (max-width: 640px) {
+  [dir="rtl"] .acc-desc, [dir="rtl"] .acc-feat-label, [dir="rtl"] .acc-feats { padding-right: 0; }
+}
+
+/* Contact info block: small "HQ" badge margin */
+[dir="rtl"] .ohq { margin-left: 0; margin-right: 4px; }
+
+/* WhatsApp hero card: arrow pushed to the far ("auto margin") end */
+[dir="rtl"] .wa-hero-arr { margin-left: 0; margin-right: auto; }
+
+/* Nav dropdown caret spacing */
+[dir="rtl"] .nav-dd-caret { margin-left: 0; margin-right: 5px; }
+
+/* "How it works" step connector line: flip which side it extends from
+   and reverse the fade direction to match the mirrored step order */
+[dir="rtl"] .step-l {
+  left: calc(-50% + 32px); right: calc(50% + 32px);
+  background: linear-gradient(270deg, rgba(212,175,55,0.4), rgba(212,175,55,0.05));
+}
+
+/* Mobile nav drawer: open from the visual "start" side (left in RTL) */
+[dir="rtl"] .mobile-drawer {
+  right: auto; left: 0;
+  border-left: none; border-right: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 24px 0 64px rgba(0,0,0,0.4);
+  transform: translateX(-100%);
+}
+[dir="rtl"] .mobile-drawer.open { transform: translateX(0); }
+
+/* Mission visual (About page): traveling dot should flow toward the
+   mirrored "next" node instead of always animating left-to-right */
+[dir="rtl"] .msvz-dot { left: auto; right: 0; animation: msvzTravelRtl 2.4s linear infinite; }
+@keyframes msvzTravelRtl { 0% { right: 0; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { right: 100%; opacity: 0; } }

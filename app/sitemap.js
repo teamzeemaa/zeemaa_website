@@ -26,6 +26,20 @@ export default async function sitemap() {
     { url: `${SITE_URL}/terms-of-service`,   lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
   ];
 
+  const arPages = [
+    { url: `${SITE_URL}/ar`,                              lastModified: new Date(), changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${SITE_URL}/ar/about`,                        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/services`,                     lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/ar/services/registration`,        lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/services/badge-printing`,      lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/services/accreditation`,       lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/services/ticketing`,           lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/services/invitations`,         lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/industries`,                   lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${SITE_URL}/ar/contact`,                      lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${SITE_URL}/ar/demo`,                          lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+  ];
+
   const conditionalPages = [
     store.pages?.gallery     && { url: `${SITE_URL}/gallery`,      lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.7 },
     store.pages?.caseStudies && { url: `${SITE_URL}/case-studies`, lastModified: new Date(), changeFrequency: 'weekly',  priority: 0.8 },
@@ -33,5 +47,5 @@ export default async function sitemap() {
     store.pages?.compare     && { url: `${SITE_URL}/compare`,      lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ].filter(Boolean);
 
-  return [...corePages, ...conditionalPages, ...blogPosts];
+  return [...corePages, ...arPages, ...conditionalPages, ...blogPosts];
 }

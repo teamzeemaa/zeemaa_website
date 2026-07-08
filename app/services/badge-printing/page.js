@@ -8,7 +8,10 @@ import BadgePrintReveal from './BadgePrintReveal';
 export const metadata = {
   title: 'Badge Printing and Accreditation in Saudi Arabia | Zeemaa',
   description: 'On-site badge printing and zone-based accreditation for conferences, exhibitions, and corporate events across Saudi Arabia. QR-coded badges, role-based access, and real-time gate control, fully managed by Zeemaa.',
-  alternates: { canonical: 'https://zeemaa.com/services/badge-printing' },
+  alternates: {
+    canonical: 'https://zeemaa.com/services/badge-printing',
+    languages: { en: 'https://zeemaa.com/services/badge-printing', ar: 'https://zeemaa.com/ar/services/badge-printing' },
+  },
 };
 
 export default async function BadgePrintingPage() {

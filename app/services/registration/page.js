@@ -8,7 +8,10 @@ import RegDashboard from './RegDashboard';
 export const metadata = {
   title: 'Event Registration System in Saudi Arabia | Zeemaa',
   description: 'Custom event registration platform for conferences, exhibitions, and corporate events across Saudi Arabia. Branded sign-up pages, Arabic and English support, QR check-in, and live analytics, fully managed by Zeemaa.',
-  alternates: { canonical: 'https://zeemaa.com/services/registration' },
+  alternates: {
+    canonical: 'https://zeemaa.com/services/registration',
+    languages: { en: 'https://zeemaa.com/services/registration', ar: 'https://zeemaa.com/ar/services/registration' },
+  },
 };
 
 export default async function RegistrationPage() {
