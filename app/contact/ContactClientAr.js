@@ -46,8 +46,12 @@ export default function ContactClientAr() {
       body: JSON.stringify({ ...form, ...utms }),
     });
     setSubmitting(false);
-    if (res.ok) { trackContactSubmit(); setDone(true); }
-    else alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب أو البريد الإلكتروني مباشرة.');
+    if (res.ok) {
+      trackContactSubmit();
+      window.location.href = '/ar/thank-you';
+    } else {
+      alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب أو البريد الإلكتروني مباشرة.');
+    }
   };
 
   const waLink = `https://wa.me/${site.whatsapp || '966552995295'}?text=${encodeURIComponent('مرحباً زيماء، أخطط لفعالية وأود مناقشة حلولكم.')}`;

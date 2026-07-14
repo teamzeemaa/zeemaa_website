@@ -24,8 +24,12 @@ export default function DemoClient({ store }) {
       body: JSON.stringify({ ...form, ...utms }),
     });
     setSubmitting(false);
-    if (res.ok) { trackDemoSubmit(); window.location.href = '/thank-you'; }
-    else alert('Something went wrong. Please reach us via WhatsApp.');
+    if (res.ok) {
+      trackDemoSubmit();
+      window.location.href = '/thank-you';
+    } else {
+      alert('Something went wrong. Please reach us via WhatsApp.');
+    }
   };
 
   return (

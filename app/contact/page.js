@@ -48,8 +48,12 @@ export default function ContactPage() {
       body: JSON.stringify({ ...form, ...utms }),
     });
     setSubmitting(false);
-    if (res.ok) { trackContactSubmit(); setDone(true); }
-    else alert('Something went wrong. Please reach us via WhatsApp or email directly.');
+    if (res.ok) {
+      trackContactSubmit();
+      window.location.href = '/thank-you';
+    } else {
+      alert('Something went wrong. Please reach us via WhatsApp or email directly.');
+    }
   };
 
   const waLink = `https://wa.me/${site.whatsapp || '966552995295'}?text=Hi%20Zeemaa%2C%20I%20am%20planning%20an%20event%20and%20would%20like%20to%20discuss%20your%20solutions.`;

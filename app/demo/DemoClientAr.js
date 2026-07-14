@@ -24,8 +24,12 @@ export default function DemoClientAr({ store }) {
       body: JSON.stringify({ ...form, ...utms }),
     });
     setSubmitting(false);
-    if (res.ok) { trackDemoSubmit(); window.location.href = '/ar/thank-you'; }
-    else alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب.');
+    if (res.ok) {
+      trackDemoSubmit();
+      window.location.href = '/ar/thank-you';
+    } else {
+      alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب.');
+    }
   };
 
   return (
