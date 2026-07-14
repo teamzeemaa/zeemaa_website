@@ -393,6 +393,53 @@ h2.stitle{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1.2px
   .footer-bottom{flex-direction:column;gap:16px;text-align:center}
 }
 
+@media(max-width:480px){
+  .section{padding:48px 20px}
+  .cover-left{padding:28px 18px}
+  .cover-statement h1{font-size:clamp(22px,4vw,32px)}
+  .about-grid,.rms-intro-grid,.contact-wrap{gap:32px}
+  .why-row{padding:28px 0}
+  .footer{padding:32px 20px}
+  .contact-item{flex-direction:column;align-items:flex-start;gap:12px}
+  .btn-g,.btn-o{padding:11px 20px;font-size:13px}
+  h2.stitle{font-size:clamp(24px,5vw,36px)}
+}
+
+@media(max-width:375px){
+  .section{padding:40px 16px}
+  .cover-left{padding:24px 14px;min-height:auto}
+  .z-dotmark{display:none}
+  .cover-doc-ref{font-size:9px}
+  .cover-logo-zmark{height:70px}
+  .cover-logo-wordmark{height:28px}
+  .cover-statement h1{font-size:clamp(18px,4vw,26px);margin-bottom:8px}
+  .cover-statement p{font-size:12px}
+  .cover-contact{padding-top:20px;border-top:.5px solid rgba(255,255,255,.08)}
+  .cover-contact-item{font-size:10px;padding-right:12px;margin-right:12px}
+  .fcard,.cover-right-glow,.cover-right-glow2{display:none}
+  .mv-grid,.tech-grid,.presence-grid,.evt-grid{gap:12px}
+  .mv-card,.tech-card,.presence-card{padding:24px 18px}
+  .svc-card,.feat-item{padding:18px 16px;gap:12px}
+  .rms-hi,.why-visual-card{padding:14px 16px}
+  .pstep{padding:0 10px}
+  .pstep:first-child{padding-left:0}
+  h2.stitle{font-size:clamp(20px,5vw,28px);margin-bottom:12px}
+  .mv-card h3,.svc-body h4,.feat-text h4,.rms-hi h4{font-size:12px}
+  .mv-card p,.svc-body p,.feat-text p,.rms-hi p{font-size:11px}
+  .about-text p{font-size:13px;line-height:1.6}
+  .footer-inner{grid-template-columns:1fr;gap:24px}
+  .contact-btns{flex-direction:column;gap:10px}
+  .btn-g,.btn-o{width:100%;justify-content:center;padding:12px 16px}
+  .why-row{padding:20px 0}
+  .evt-card{min-height:200px}
+  .evt-card-content{padding:16px}
+  .evt-card h4{font-size:12px}
+  .evt-card p{font-size:10px}
+  .dash{transform:scale(0.85);transform-origin:top;margin-bottom:-80px}
+  .footer{padding:28px 16px}
+  .footer-bottom{font-size:10px}
+}
+
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   body{background:#060D1F!important}
