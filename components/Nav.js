@@ -8,7 +8,6 @@ const AR_ROUTES = ['/', '/about', '/services', '/industries', '/contact', '/demo
 const I18N = {
   en: {
     tagline: 'Fully Managed Event Technology',
-    switchLabel: 'العربية',
     online: 'Online',
     offline: 'Offline',
     login: 'Login',
@@ -66,7 +65,6 @@ const I18N = {
   },
   ar: {
     tagline: 'تقنية فعاليات متكاملة الإدارة',
-    switchLabel: 'English',
     online: 'متصل',
     offline: 'غير متصل',
     login: 'تسجيل الدخول',
@@ -123,6 +121,20 @@ const I18N = {
     ],
   },
 };
+
+function LanguageSwitch({ locale, otherHref }) {
+  const isAr = locale === 'ar';
+  return (
+    <a
+      href={otherHref}
+      className={`lang-switch ${isAr ? 'is-ar' : 'is-en'}`}
+      aria-label={isAr ? 'Switch to English' : 'التبديل إلى العربية'}
+    >
+      <span className="lang-switch-code" aria-hidden="true">{isAr ? 'EN' : 'العربية'}</span>
+      <span className="lang-switch-thumb" aria-hidden="true" />
+    </a>
+  );
+}
 
 export default function Nav({ store, locale = 'en' }) {
   const pathname = usePathname();
@@ -212,11 +224,8 @@ export default function Nav({ store, locale = 'en' }) {
     <>
       {/* TOPBAR */}
       <div className="topbar">
-        <div className="topbar-left" style={{display:'flex',alignItems:'center',gap:14}}>
+        <div className="topbar-left">
           <span style={{fontSize:12,color:'rgba(255,255,255,0.35)'}}>{dict.tagline}</span>
-          <a href={otherHref} className="lang-toggle" style={{fontSize:12,color:'rgba(255,255,255,0.5)',textDecoration:'none'}}>
-            <i className="fas fa-globe" style={{fontSize:10}}/> {dict.switchLabel}
-          </a>
         </div>
 
         <div className="topbar-right">
@@ -293,6 +302,7 @@ export default function Nav({ store, locale = 'en' }) {
           })}
         </div>
         <div className="nav-cta-desktop">
+          <LanguageSwitch locale={locale} otherHref={otherHref} />
           {site.demoMode === 'watch' && site.demoLink ? (
             <a href={site.demoLink} target="_blank" rel="noopener noreferrer" className="bgh" style={{padding:'9px 18px',fontSize:13}}>
               <i className="fas fa-play"/> {dict.watchDemo}
@@ -324,6 +334,10 @@ export default function Nav({ store, locale = 'en' }) {
           <button className="mdl-close" onClick={() => setMobileOpen(false)} aria-label={dict.closeMenu}>
             <i className="fas fa-xmark" />
           </button>
+        </div>
+
+        <div className="mdl-lang-row">
+          <LanguageSwitch locale={locale} otherHref={otherHref} />
         </div>
 
         <a href={demoHref} className="bg mdl-cta" onClick={() => setMobileOpen(false)}>
@@ -365,9 +379,6 @@ export default function Nav({ store, locale = 'en' }) {
         <div className="mdl-foot">
           <a href={`tel:${site.phone || '+966552995295'}`} className="mdl-foot-phone">
             <i className="fas fa-phone" /> <span className="ltr-num">{site.phone || '+966 55 299 5295'}</span>
-          </a>
-          <a href={otherHref} className="lang-toggle" style={{display:'flex',alignItems:'center',gap:6,fontSize:12,color:'rgba(255,255,255,0.5)',textDecoration:'none'}}>
-            <i className="fas fa-globe" style={{fontSize:11}}/> {dict.switchLabel}
           </a>
           <div className="si">
             {(socials.length > 0 ? socials : [
