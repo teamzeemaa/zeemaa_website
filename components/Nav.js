@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { LogoIcon, LogoText } from './Logo';
 
 const AR_ROUTES = ['/', '/about', '/services', '/industries', '/contact', '/demo'];
@@ -123,14 +123,26 @@ const I18N = {
 };
 
 function LanguageSwitch({ locale, otherHref }) {
+  const router = useRouter();
+  const [switching, setSwitching] = useState(false);
   const isAr = locale === 'ar';
+  const showAr = switching ? !isAr : isAr;
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (switching) return;
+    setSwitching(true);
+    setTimeout(() => router.push(otherHref), 320);
+  };
+
   return (
     <a
       href={otherHref}
-      className={`lang-switch ${isAr ? 'is-ar' : 'is-en'}`}
+      onClick={handleClick}
+      className={`lang-switch ${showAr ? 'is-ar' : 'is-en'} ${switching ? 'is-switching' : ''}`}
       aria-label={isAr ? 'Switch to English' : 'التبديل إلى العربية'}
     >
-      <span className="lang-switch-code" aria-hidden="true">{isAr ? 'EN' : 'العربية'}</span>
+      <span className="lang-switch-code" aria-hidden="true">{showAr ? 'EN' : 'العربية'}</span>
       <span className="lang-switch-thumb" aria-hidden="true" />
     </a>
   );

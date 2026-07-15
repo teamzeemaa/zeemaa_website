@@ -131,7 +131,7 @@ body { padding-bottom: 34px; }
   height: 26px; border-radius: 999px;
   flex-shrink: 0; text-decoration: none; gap: 5px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  transition: filter .2s ease, transform .2s ease;
+  transition: filter .2s ease, transform .2s ease, background .3s ease;
   direction: ltr; /* always physical left/right, independent of the page's RTL context on /ar */
 }
 .lang-switch:hover { transform: translateY(-1px); filter: brightness(1.08); }
@@ -161,8 +161,10 @@ body { padding-bottom: 34px; }
 .lang-switch.is-en .lang-switch-thumb { left: 3px; }
 .lang-switch.is-ar .lang-switch-thumb { left: 3px; }
 .lang-switch:hover .lang-switch-thumb { transform: translateY(-50%) scale(1.05); }
+.lang-switch.is-switching.is-en .lang-switch-thumb,
+.lang-switch.is-switching.is-ar .lang-switch-thumb { left: auto; right: 3px; }
 @media (prefers-reduced-motion: reduce) {
-  .lang-switch, .lang-switch-thumb { transition: none; }
+  .lang-switch:hover { transform: none; }
 }
 .mdl-lang-row { display: flex; justify-content: center; margin-bottom: 20px; }
 .bcn {
