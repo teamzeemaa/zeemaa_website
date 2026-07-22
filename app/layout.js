@@ -102,6 +102,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Consent Mode v2 — must run before the gtag.js library loads and
+            before any gtag config/event calls, so the library sees the denied
+            defaults (or a restored prior "granted" choice) from its first tick. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'wait_for_update': 500
+          });
+          try {
+            if (localStorage.getItem('zm_consent') === 'granted') {
+              gtag('consent', 'update', {
+                analytics_storage: 'granted',
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted'
+              });
+            }
+          } catch (e) {}
+        `}} />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          gtag('js', new Date());
+          gtag('config', '${GA4_ID}');
+          gtag('config', '${GADS_ID}');
+        `}} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebSite) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaLocalRiyadh) }} />
@@ -130,29 +161,17 @@ export default function RootLayout({ children }) {
             b.style.cssText='position:fixed;bottom:0;left:0;right:0;background:#0d1b2e;border-top:1px solid rgba(255,255,255,0.1);padding:16px 24px;z-index:9999;font-size:13px;color:rgba(255,255,255,0.7);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap';
             b.innerHTML='<p>We use analytics cookies to improve your experience. <a href="/privacy-policy" style="color:#D4AF37">Privacy Policy</a></p><div style="display:flex;gap:10px"><button id="ca" style="background:#D4AF37;color:#060D1F;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-weight:600">Accept</button><button id="cd" style="background:transparent;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15);padding:8px 20px;border-radius:6px;cursor:pointer">Decline</button></div>';
             document.body.appendChild(b);
-            document.getElementById('ca').onclick=function(){localStorage.setItem(KEY,'granted');b.remove();loadAnalytics();};
-            document.getElementById('cd').onclick=function(){localStorage.setItem(KEY,'denied');b.remove();};
-          })();
-        `}} />
-
-        <Script id="ga4-loader" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: `
-          function loadAnalytics(){
-            if(window._analyticsLoaded)return;
-            window._analyticsLoaded=true;
-            var s=document.createElement('script');
-            s.src='https://www.googletagmanager.com/gtag/js?id=${GA4_ID}';
-            s.async=true;
-            document.head.appendChild(s);
-            s.onload=function(){
-              window.dataLayer=window.dataLayer||[];
-              function gtag(){dataLayer.push(arguments);}
-              window.gtag=gtag;
-              gtag('js',new Date());
-              gtag('config','${GA4_ID}');
-              gtag('config','${GADS_ID}');
+            document.getElementById('ca').onclick=function(){
+              localStorage.setItem(KEY,'granted');
+              window.gtag&&gtag('consent','update',{analytics_storage:'granted',ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'});
+              b.remove();
             };
-          }
-          if(typeof localStorage!=='undefined'&&localStorage.getItem('zm_consent')==='granted'){loadAnalytics();}
+            document.getElementById('cd').onclick=function(){
+              localStorage.setItem(KEY,'denied');
+              window.gtag&&gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+              b.remove();
+            };
+          })();
         `}} />
         <FloatingButtons whatsapp="966552995295" />
       </body>
