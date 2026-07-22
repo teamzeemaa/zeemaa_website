@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Nav from '../../components/Nav';
 import PageHero from '../../components/PageHero';
 import { countries } from '../../lib/countries';
-import { captureUtm, getUtms, trackContactSubmit } from '../../lib/tracking';
+import { captureUtm, getUtms } from '../../lib/tracking';
 
 export default function ContactPage() {
   const [store, setStore] = useState({ site: {}, sections: {}, pages: {} });
@@ -49,7 +49,6 @@ export default function ContactPage() {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackContactSubmit();
       window.location.href = '/thank-you';
     } else {
       alert('Something went wrong. Please reach us via WhatsApp or email directly.');

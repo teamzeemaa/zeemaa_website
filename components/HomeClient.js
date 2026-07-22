@@ -9,7 +9,6 @@ import PostCard from './blog/PostCard';
 import MissionVisionCards from './MissionVisionCards';
 import {
   captureUtm, getUtms,
-  trackDemoSubmit, trackContactSubmit,
   trackWhatsApp, trackPhone,
   trackDemoOpen,
   trackScrollDepth,
@@ -84,7 +83,6 @@ export default function HomeClient({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackContactSubmit();
       window.location.href = '/thank-you';
     } else {
       alert('Something went wrong. Please try WhatsApp or email us directly.');
@@ -107,7 +105,6 @@ export default function HomeClient({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackDemoSubmit();
       setDemoOpen(false);
       window.location.href = '/thank-you';
     } else {

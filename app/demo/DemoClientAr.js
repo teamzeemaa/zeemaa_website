@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { LogoIcon, LogoText } from '../../components/Logo';
 import { countries } from '../../lib/countries';
-import { captureUtm, getUtms, trackDemoSubmit } from '../../lib/tracking';
+import { captureUtm, getUtms } from '../../lib/tracking';
 
 export default function DemoClientAr({ store }) {
   const [form, setForm] = useState({ fullName:'', email:'', phone:'', countryCode:'+966', company:'', eventType:'', demoPreference:'', message:'' });
@@ -25,7 +25,6 @@ export default function DemoClientAr({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackDemoSubmit();
       window.location.href = '/ar/thank-you';
     } else {
       alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب.');

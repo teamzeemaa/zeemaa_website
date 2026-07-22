@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Nav from '../../components/Nav';
 import PageHero from '../../components/PageHero';
 import { countries } from '../../lib/countries';
-import { captureUtm, getUtms, trackContactSubmit } from '../../lib/tracking';
+import { captureUtm, getUtms } from '../../lib/tracking';
 
 export default function ContactClientAr() {
   const [store, setStore] = useState({ site: {}, sections: {}, pages: {} });
@@ -47,7 +47,6 @@ export default function ContactClientAr() {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackContactSubmit();
       window.location.href = '/ar/thank-you';
     } else {
       alert('حدث خطأ ما. يرجى التواصل معنا عبر واتساب أو البريد الإلكتروني مباشرة.');

@@ -8,7 +8,6 @@ import PostCard from './blog/PostCard';
 import MissionVisionCards from './MissionVisionCards';
 import {
   captureUtm, getUtms,
-  trackDemoSubmit, trackContactSubmit,
   trackWhatsApp, trackPhone,
   trackDemoOpen,
   trackScrollDepth,
@@ -77,7 +76,6 @@ export default function HomeClientAr({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackContactSubmit();
       window.location.href = '/ar/thank-you';
     } else {
       alert('حدث خطأ ما. يرجى المحاولة عبر واتساب أو مراسلتنا مباشرة عبر البريد الإلكتروني.');
@@ -99,7 +97,6 @@ export default function HomeClientAr({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackDemoSubmit();
       setDemoOpen(false);
       window.location.href = '/ar/thank-you';
     } else {

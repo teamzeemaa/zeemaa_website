@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { LogoIcon, LogoText } from '../../components/Logo';
 import { countries } from '../../lib/countries';
-import { captureUtm, getUtms, trackDemoSubmit } from '../../lib/tracking';
+import { captureUtm, getUtms } from '../../lib/tracking';
 
 export default function DemoClient({ store }) {
   const [form, setForm] = useState({ fullName:'', email:'', phone:'', countryCode:'+966', company:'', eventType:'', demoPreference:'', message:'' });
@@ -25,7 +25,6 @@ export default function DemoClient({ store }) {
     });
     setSubmitting(false);
     if (res.ok) {
-      trackDemoSubmit();
       window.location.href = '/thank-you';
     } else {
       alert('Something went wrong. Please reach us via WhatsApp.');
